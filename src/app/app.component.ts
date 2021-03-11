@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+//@component vai trazer um tipo de import fixo pra pagina se guiar. onde segura os compnents
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todolist-elogica-challenge';
+
 }

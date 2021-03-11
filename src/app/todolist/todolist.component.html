@@ -1,0 +1,31 @@
+<body>
+    <header>
+        <h1>Todo List</h1>
+    
+    </header>
+    
+    <form>
+        <input pattern="[^\s]*"  name='todo' type='text' [(ngModel)]='newTodo.todo' class="todo_input"/>
+        <button type='submit' (click)='createTodo()' class="todo_button">Add Atividade</button>
+    </form>
+    <div class="todo_container">
+        
+        <ul class="todo_list" >
+            <h3 *ngIf='isEmptyObject(todos)' class="emptyList">-Lista Vazia-</h3>
+                <li *ngFor='let t of todos; index as i' class="todo" [class.actived]=t.active>
+                    <!-- {{t.id}} - {{t.active}} -->
+                    - {{t.todo}} -
+                    <div>
+                        <button type='button'  (click)='editTodo(t._id, t)'   class="complete_btn">
+                            <fa-icon [icon]="check" class="check"></fa-icon>
+                        </button>
+                        <button type='button'  (click)='deleteTodo(t._id)' class="delete_btn">
+                            <fa-icon [icon]="trash" class='trash'></fa-icon>
+                        </button>
+                    </div>
+                  
+           </li>
+        </ul>
+
+    </div>
+</body>
